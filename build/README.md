@@ -21,7 +21,7 @@ Helpers, not phases: `copr-helpers.sh` (sourced), `validate-brewfiles.sh`, and
 Inactive until you activate them:
 
 - `30-tailscale.sh.example` — a third-party RPM repository done safely
-- `40-gnome-extensions.sh.example` — GNOME Shell extensions with a dconf override
+- `40-gnome-extensions.sh` — GNOME Shell extensions with a dconf override
 - `50-nvidia.sh.example` — NVIDIA drivers and CDI container support
 - `60-desktop-swap.sh.example` — replacing the GNOME desktop
 
