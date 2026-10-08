@@ -102,8 +102,8 @@ Branch=stable
 [Flatpak Preinstall org.zotero.Zotero]
 Branch=stable
 
+[Flatpak Preinstall com.github.marhkb.Pods]
+Branch=stable
+
 # [Flatpak Preinstall ]
-# Branch=stable
-#
-# [Flatpak Preinstall io.github.flattool.Warehouse]
 # Branch=stable
