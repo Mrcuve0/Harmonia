@@ -27,6 +27,83 @@ Branch=stable
 Branch=stable
 
 # Add another by appending a section, for example:
+[Flatpak Preinstall app.zen_browser.zen]
+Branch=stable
+
+[Flatpak Preinstall com.dropbox.Client]
+Branch=stable
+
+[Flatpak Preinstall com.github.junrrein.PDFSlicer]
+Branch=stable
+
+[Flatpak Preinstall com.nextcloud.desktopclient.nextcloud]
+Branch=stable
+
+[Flatpak Preinstall com.obsproject.Studio]
+Branch=stable
+
+[Flatpak Preinstall dev.geopjr.Collision]
+Branch=stable
+
+[Flatpak Preinstall hu.irl.cameractrls]
+Branch=stable
+
+[Flatpak Preinstall io.github.alainm23.planify]
+Branch=stable
+
+[Flatpak Preinstall io.github.celluloid_player.Celluloid]
+Branch=stable
+
+[Flatpak Preinstall io.github.diegoivan.pdf_metadata_editor]
+Branch=stable
+
+[Flatpak Preinstall io.github.kolunmi.Bazaar]
+Branch=stable
+
+[Flatpak Preinstall io.gitlab.adhami3310.Impression]
+Branch=stable
+
+[Flatpak Preinstall io.missioncenter.MissionCenter]
+Branch=stable
+
+[Flatpak Preinstall md.obsidian.Obsidian]
+Branch=stable
+
+[Flatpak Preinstall me.dusansimic.DynamicWallpaper]
+Branch=stable
+
+[Flatpak Preinstall org.chromium.Chromium]
+Branch=stable
+
+[Flatpak Preinstall org.cryptomator.Cryptomator]
+Branch=stable
+
+[Flatpak Preinstall org.ghidra_sre.Ghidra]
+Branch=stable
+
+[Flatpak Preinstall org.gnome.World.PikaBackup]
+Branch=stable
+
+[Flatpak Preinstall org.kicad.KiCad]
+Branch=stable
+
+[Flatpak Preinstall org.onlyoffice.desktopeditors]
+Branch=stable
+
+[Flatpak Preinstall org.signal.Signal]
+Branch=stable
+
+[Flatpak Preinstall org.telegram.desktop]
+Branch=stable
+
+[Flatpak Preinstall org.wireshark.Wireshark]
+Branch=stable
+
+[Flatpak Preinstall org.zotero.Zotero]
+Branch=stable
+
+# [Flatpak Preinstall ]
+# Branch=stable
 #
 # [Flatpak Preinstall io.github.flattool.Warehouse]
 # Branch=stable
