@@ -42,7 +42,7 @@ EGO_EXTENSIONS=(
 	blur-my-shell@aunetx
 	caffeine@patapon.info
 	disable-unredirect@exeos
-	dispaly-brightness-ddcutil@themightydeity.github.com
+	display-brightness-ddcutil@themightydeity.github.com
 	do-not-disturb-while-screen-sharing-or-recording@marcinjahn.com
 	emoji-copy@felipeftn
 	hide-cursor@elcste.com
