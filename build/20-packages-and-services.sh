@@ -24,6 +24,16 @@ source /ctx/build/copr-helpers.sh
 # Enable nullglob for all glob operations to prevent failures on empty matches
 shopt -s nullglob
 
+echo "::group:: Remove Default Packages"
+
+dnf5 remove -y \
+    gnome-software \
+    firefox \
+    firefox-langpacks \
+    gnome-extensions-app
+
+echo "::endgroup::"
+
 echo "::group:: Install Default Packages"
 
 dnf5 install -y just gum fzf jq
@@ -41,15 +51,6 @@ copr_install_isolated "ublue-os/packages" uupd
 
 echo "::endgroup::"
 
-echo "::group:: Remove Default Packages"
-
-dnf5 remove -y \
-    gnome-software \
-    firefox \
-    firefox-langpacks \
-    gnome-extensions-app
-
-echo "::endgroup::"
 
 echo "::group:: Enable update services"
 
