@@ -35,7 +35,7 @@
 
 # OCI context images - imported below and pinned directly in their FROM lines.
 # The base image is pinned in the FROM line below and updated by Renovate.
-FROM ghcr.io/projectbluefin/common:latest@sha256:65af2a99dc8a216ea32ec3f00c3175a5a22156e4982c5aec3686ed21e24065e2 AS common
+FROM ghcr.io/projectbluefin/common:latest@sha256:f00438258ae69cc71e4ba42aba8e4edfeb01759741e8ac4a67d3406121ed76ce AS common
 FROM ghcr.io/ublue-os/brew:latest@sha256:2aaf87e3757466bc28d056505a651c7ca5c56fd28f6ff709b34f3f5dbc860e89 AS brew
 
 # Context stage - combine local and imported OCI container resources
@@ -50,7 +50,7 @@ COPY --from=brew /system_files /oci/brew
 
 # Base Image - GNOME included (Fedora official OSTree desktop)
 # Renovate will keep the digest pin up to date.
-FROM quay.io/fedora-ostree-desktops/silverblue:44@sha256:78ee149b680853899e218fc764477ab791cca4b44167b8aecc9c3b436460964e
+FROM quay.io/fedora-ostree-desktops/silverblue:44@sha256:318801b52f5886547de605583a8edf86d3f4cf51ca7abeb03782d0cf74680890
 
 # Image identity - these define how bootc, fastfetch, and the ublue ecosystem
 # recognize your image. Change these to match your project name.
@@ -104,6 +104,14 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=tmpfs,dst=/boot \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build/20-packages-and-services.sh
+
+### GNOME EXTENSIONS
+RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
+    --mount=type=cache,dst=/var/cache/libdnf5 \
+    --mount=type=cache,dst=/var/cache/rpm-ostree \
+    --mount=type=tmpfs,dst=/boot \
+    --mount=type=tmpfs,dst=/tmp \
+    /ctx/build/40-gnome-extensions.sh
 
 ### CLEANUP
 ## Finalises package and Flatpak sources, then prunes build artifacts before
