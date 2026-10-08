@@ -41,17 +41,17 @@ EGO_EXTENSIONS=(
 	appindicatorsupport@rgcjonas.gmail.com
 	blur-my-shell@aunetx
 	caffeine@patapon.info
+	disable-unredirect@exeos
 	dispaly-brightness-ddcutil@themightydeity.github.com
 	do-not-disturb-while-screen-sharing-or-recording@marcinjahn.com
 	emoji-copy@felipeftn
 	hide-cursor@elcste.com
-	hitetopbar@mathieu.bidon.ca
+	hidetopbar@mathieu.bidon.ca
 	monochrome-toggle@rangol.se
 	nightthemeswitcher@romainvigier.fr
 	papershell@lalovene.github.com
 	pip-on-top@rafostar.github.com
 	Vitals@CoreCoding.com
-	yetanotherradio@io.github.buddysirjava
 )
 
 for uuid in "${EGO_EXTENSIONS[@]}"; do
