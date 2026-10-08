@@ -24,15 +24,6 @@ source /ctx/build/copr-helpers.sh
 # Enable nullglob for all glob operations to prevent failures on empty matches
 shopt -s nullglob
 
-echo "::group:: Remove Default Packages"
-
-dnf5 remove -y \
-    gnome-software \
-    firefox \
-    firefox-langpacks \
-    gnome-extensions-app
-
-echo "::endgroup::"
 
 echo "::group:: Install Default Packages"
 
@@ -51,6 +42,17 @@ copr_install_isolated "ublue-os/packages" uupd
 
 echo "::endgroup::"
 
+# Remember to update the tests/template/20-packages-and-services_test.bats file accordingly
+# See line 95 of that file
+echo "::group:: Remove Default Packages"
+
+dnf5 remove -y \
+    gnome-software \
+    firefox \
+    firefox-langpacks \
+    gnome-extensions-app
+
+echo "::endgroup::"
 
 echo "::group:: Enable update services"
 
@@ -60,6 +62,7 @@ systemctl enable uupd.timer
 systemctl enable uupd-resume.timer
 
 echo "::endgroup::"
+
 
 # Restore default glob behavior
 shopt -u nullglob
