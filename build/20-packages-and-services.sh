@@ -41,6 +41,16 @@ copr_install_isolated "ublue-os/packages" uupd
 
 echo "::endgroup::"
 
+echo "::group:: Remove Default Packages"
+
+dnf5 remove -y \
+    gnome-software \
+    firefox \
+    firefox-langpacks \
+    gnome-extensions-app
+
+echo "::endgroup::"
+
 echo "::group:: Enable update services"
 
 # Enable explicitly rather than relying on the shipped preset, matching how
