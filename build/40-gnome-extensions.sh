@@ -56,7 +56,12 @@ EGO_EXTENSIONS=(
 
 for uuid in "${EGO_EXTENSIONS[@]}"; do
 	info_url="https://extensions.gnome.org/extension-info/?uuid=${uuid}&shell_version=${SHELL_MAJOR}"
-	download_path="$(curl -fsSL "${info_url}" | jq -r .download_url)"
+  if ! info="$(curl -fsSL "${info_url}")"; then
+    echo "::error::No ${uuid} build for GNOME Shell ${SHELL_MAJOR}, or possible typo in extension uuid" >&2
+    exit 1
+  fi
+  download_path="$(jq -er .download_url <<<"${info}")"
+	# download_path="$(curl -fsSL "${info_url}" | jq -r .download_url)"
 
 	mkdir -p "${EXTENSIONS_DIR}/${uuid}"
 	curl -fsSL "https://extensions.gnome.org${download_path}" -o /tmp/extension.zip
