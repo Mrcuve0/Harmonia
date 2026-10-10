@@ -88,10 +88,11 @@ teardown() {
 	[ "$status" -eq 0 ]
 
 	mapfile -t calls <"${DNF5_LOG}"
-	[ "${#calls[@]}" -eq 4 ]
+	[ "${#calls[@]}" -eq 5 ]
 	[ "${calls[1]}" = "-y copr enable ublue-os/packages" ]
 	[ "${calls[2]}" = "-y copr disable ublue-os/packages" ]
 	[ "${calls[3]}" = "-y install --enablerepo=copr:copr.fedorainfracloud.org:ublue-os:packages uupd" ]
+	[ "${calls[4]}" = "remove -y gnome-software firefox firefox-langpacks gnome-extensions-app" ]
 }
 
 @test "20-packages-and-services: enables the update timers" {
