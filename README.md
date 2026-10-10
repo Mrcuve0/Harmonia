@@ -17,16 +17,38 @@ Here are the changes from [Base Image Name]. This image is based on
 
 ### Added Packages (Build-time)
 
-- List the packages you install at build time
+#### RPMs
 
 ### Added Applications (Runtime)
 
 - **CLI tools (Homebrew)**: list them
 - **GUI apps (Flatpak)**: list them
 
+### Added GNOME Extensions
+
+- appindicatorsupport
+- blur-my-shell
+- caffeine
+- disable-unredirect
+- display-brightness-ddcutil
+- do-not-disturb-while-screen-sharing-or-recording
+- emoji-copy
+- hide-cursor
+- hidetopbar
+- monochrome-toggle
+- nightthemeswitcher
+- papershell
+- pip-on-top
+- Vitals
+
 ### Removed or Disabled
 
-- List anything removed from the base image
+#### RPMs
+
+- firefox
+- firefox-langpacks
+- gnome-extensions-app
+- gnome-software
 
 ### Configuration Changes
 
@@ -44,12 +66,12 @@ _Last updated: [date]_
 1. **Create your repository** — "Use this template" on GitHub.
 2. **Rename the project.** The published name is your repository name. Three
    files carry it as a literal, and `just test-contract` fails if they disagree:
-
    - `Containerfile` — the `# Name:` comment and `ARG IMAGE_NAME`
    - `Justfile` — the `IMAGE_NAME` default
    - `artifacthub-repo.yml` — `repositoryID`
 
    Grep for `finpilot` afterwards to catch the prose and the examples.
+
 3. **Finish setup.** [The `onboarding` skill](.agents/skills/onboarding/SKILL.md)
    carries the rest — enabling Actions, auto-merge and workflow permissions, the
    Renovate token, the `stable` branch, branch protection on both branches, and
